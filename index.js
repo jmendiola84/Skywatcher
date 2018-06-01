@@ -6,13 +6,17 @@ var $stateInput = document.querySelector("#state");
 var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
+var $cleanBtn = document.querySelector("#clean");
+
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
+$cleanBtn.addEventListener("click", handleCleanButtonClick);
 
 // Set filteredUFO to data initially
 var filteredUFO = dataSet;
 var OrgDataSet = dataSet;
+
 
 // renderTable renders the filteredUFO to the tbody
 function renderTable() {
@@ -28,6 +32,8 @@ function renderTable() {
       var field = fields[j];
       var $cell = $row.insertCell(j);
       $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
     }
   }
 }
@@ -107,8 +113,23 @@ function handleSearchButtonClick() {
 
     // If true, add the address to the filteredUFO, otherwise don't add it to filteredUFO
   return UFOShape === filterShape;})}
+
   
   renderTable();
+}
+
+function handleCleanButtonClick() {
+	
+	filteredUFO = OrgDataSet;
+	dataSet = OrgDataSet;
+	
+	$datetimeInput.value = "";
+	$cityInput.value = "";
+	$stateInput.value = "";
+	$countryInput.value = "";
+	$shapeInput.value = "";
+	
+	renderTable();
 }
 
 // Render the table for the first time on page load
