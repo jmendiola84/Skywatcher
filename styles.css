@@ -1,0 +1,62 @@
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+body {
+  background-color: black;
+}
+
+th { color: #2171b5; }
+
+td { color: #c6dbef; }
+
+.table-hover tbody tr:hover td {
+    background-color: rgba(240,240,240,0.9);
+}
+
+.table-striped tbody tr:nth-child(odd) {
+	background-color: rgba(33,113,181,0.5);
+	}
+	
+
+.table-striped tbody tr:nth-child(even){
+   background-color: rgba(66,146,198,0.5);
+}
+
+	
+	
+.form-control {
+  display: inline-block;
+  width: 250px;
+  margin-top: 50px;
+}
+
+.jumbotron {
+	text-align: center; 
+	
+		background-image: url(https://www.kcet.org/sites/kl/files/styles/kl_image_article_hero/public/thumbnails/image/stars-banner.jpg); 
+	
+		background-size:cover;
+	
+		color: #ffffff;
+}
+
+

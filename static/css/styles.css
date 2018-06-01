@@ -1,0 +1,17 @@
+.form-control {
+  display: inline-block;
+  width: 250px;
+  margin-top: 50px;
+}
+
+.jumbotron {
+	text-align: center; 
+	
+		background-image: url(https://www.kcet.org/sites/kl/files/styles/kl_image_article_hero/public/thumbnails/image/stars-banner.jpg?itok=uFRO8PCz); 
+	
+		background-size:cover;
+	
+		color: #ffffff;
+}
+
+
