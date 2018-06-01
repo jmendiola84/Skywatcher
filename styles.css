@@ -28,6 +28,25 @@ th { color: #2171b5; }
 
 td { color: #c6dbef; }
 
+.btn {
+  padding: 6px 10px;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+}
+
+.btn:hover {background-color: #2171b5}
+
+.btn:active {
+  background-color: #2171b5;
+  box-shadow: 0 4px rgba(33,113,181,0.5);
+  transform: translateY(4px);
+}
+
+
 .table-hover tbody tr:hover td {
     background-color: rgba(240,240,240,0.9);
 }
