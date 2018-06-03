@@ -28,6 +28,22 @@ th { color: #2171b5; }
 
 td { color: #c6dbef; }
 
+
+.jumbotron {
+	text-align: center; 
+	background-image: url(https://www.kcet.org/sites/kl/files/styles/kl_image_article_hero/public/thumbnails/image/stars-banner.jpg); 
+	background-size:cover;
+	color: #ffffff;
+}
+
+.form-control-sm {
+  display: inline-block;
+  width: 90px;
+  height: 20px;
+  margin-top: 50px;
+}
+
+
 .btn {
   padding: 6px 10px;
   font-size: 14px;
@@ -61,21 +77,9 @@ td { color: #c6dbef; }
 }
 
 	
-	
-.form-control {
-  display: inline-block;
-  width: 200px;
-  margin-top: 50px;
-}
-
-.jumbotron {
-	text-align: center; 
-	
-		background-image: url(https://www.kcet.org/sites/kl/files/styles/kl_image_article_hero/public/thumbnails/image/stars-banner.jpg); 
-	
-		background-size:cover;
-	
-		color: #ffffff;
-}
+#datetime {
+	width: 150px;
+	height: 20px;
+	margin-top: 50px;
 
 

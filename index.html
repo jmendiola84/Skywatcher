@@ -19,17 +19,27 @@
                 <p>UFO Sighting Data</p>
     </div>
 
-	<form class="form-row align-items-center">
-    <input type="text" class="form-control-sm" id="datetime" placeholder="Date Time">
+	<form class="form-row align-items-center" name="search-form">
+    <input type="number" class="form-control-sm" max="2014" min="2010" step="1" id="datetime" placeholder="Year">
 	<input type="text" class="form-control-sm" id="city" placeholder="City">
 	<input type="text" class="form-control-sm" id="state" placeholder="State">
-	<input type="text" class="form-control-sm" id="country" placeholder="Country">
+	<select class="custom-select custom-select-lg mb-3" id="country" name="country-ddl" placeholder="Country" onchange="selCountry()">
+		<option value="" >Country</option>
+		<option value="ca">Canada</option>
+		<option value="us">USA</option>
+		<option value="gb">UK</option>
+	</select>
 	<input type="text" class="form-control-sm" id="shape" placeholder="Shape">
 	<a id="search" class="btn btn-primary active" role="button">Search</a>
-	<a id="clean" class="btn btn-primary active" role="button">Clean Filters</a>
+	<a type="reset" id="clean" class="btn btn-primary active" role="button">Clean Filters</a>
 	</form>
-
-
+	<script>
+    function selCountry() {
+        document.querySelector("#country").value = document.getElementById("country").value;
+    
+	}
+	</script>
+	
     <div class="row">
       <div class="table-responsive">
         <table class="table table-striped table-dark col-md-10" id="UFOTable">

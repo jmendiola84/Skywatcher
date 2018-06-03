@@ -40,7 +40,7 @@ function renderTable() {
 
 function handleSearchButtonClick() {
   // Format the user's search by removing leading and trailing whitespace, lowercase the string
-  var filterDatetime = $datetimeInput.value.trim().toLowerCase();
+  var filterDatetime = $datetimeInput.value;
   var filterCity = $cityInput.value.trim().toLowerCase();
   var filterState = $stateInput.value.trim().toLowerCase();
   var filterCountry = $countryInput.value.trim().toLowerCase();
@@ -53,7 +53,7 @@ function handleSearchButtonClick() {
   // Set filteredUFO to an array of all addresses whose "datetime" matches the filter
   prv_flg ++;
   filteredUFO = dataSet.filter(function(ufo) {
-    var UFODatetime = ufo.datetime.toLowerCase();
+    var UFODatetime = ufo.datetime.slice(-4);
     // If true, add the address to the filteredUFO, otherwise don't add it to filteredUFO
   return UFODatetime === filterDatetime;})}
   
