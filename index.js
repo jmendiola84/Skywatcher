@@ -12,6 +12,21 @@ var $page2Btn = document.querySelector("#page-2");
 var $page3Btn = document.querySelector("#page-3");
 var $page4Btn = document.querySelector("#page-4");
 var $page5Btn = document.querySelector("#page-5");
+var $page6Btn = document.querySelector("#page-6");
+var $page7Btn = document.querySelector("#page-7");
+var $page8Btn = document.querySelector("#page-8");
+var $page9Btn = document.querySelector("#page-9");
+var $page10Btn = document.querySelector("#page-10");
+var $page11Btn = document.querySelector("#page-11");
+var $page12Btn = document.querySelector("#page-12");
+var $page13Btn = document.querySelector("#page-13");
+var $page14Btn = document.querySelector("#page-14");
+var $page15Btn = document.querySelector("#page-15");
+var $page16Btn = document.querySelector("#page-16");
+var $page17Btn = document.querySelector("#page-17");
+var $page18Btn = document.querySelector("#page-18");
+var $page19Btn = document.querySelector("#page-19");
+var $page20Btn = document.querySelector("#page-20");
 
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
@@ -46,6 +61,7 @@ function renderTable() {
 	  {$cell.style.display="none";} 
     }
   }
+
 	//for (var i = 50; i <= filteredUFO.length; i++) {
 	//filteredUFO[i].style.display="none";}
 }
@@ -126,6 +142,12 @@ function handleSearchButtonClick() {
     // If true, add the address to the filteredUFO, otherwise don't add it to filteredUFO
   return UFOShape === filterShape;})}
 
+   if (filteredUFO.length < 50)
+	{$page2Btn.style.display="none";
+	 $page3Btn.style.display="none";
+	 $page4Btn.style.display="none";
+	 $page5Btn.style.display="none";
+	}
   
   renderTable();
 }
@@ -140,6 +162,11 @@ function handleCleanButtonClick() {
 	$stateInput.value = "";
 	$countryInput.value = "";
 	$shapeInput.value = "";
+	
+	$page2Btn.style.display="block";
+	$page3Btn.style.display="block";
+	$page4Btn.style.display="block";
+	$page5Btn.style.display="block";
 	
 	renderTable();
 }
@@ -182,7 +209,7 @@ function handlePage2ButtonClick() {
 	  {$cell.style.display="none";} 
     }
   }
- 
+	
 }
 
 function handlePage3ButtonClick() {
