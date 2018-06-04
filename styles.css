@@ -40,7 +40,7 @@ td { color: #c6dbef; }
   display: inline-block;
   width: 90px;
   height: 20px;
-  margin-top: 50px;
+
 }
 
 
@@ -75,11 +75,3 @@ td { color: #c6dbef; }
 .table-striped tbody tr:nth-child(even){
    background-color: rgba(66,146,198,0.5);
 }
-
-	
-#datetime {
-	width: 150px;
-	height: 20px;
-	margin-top: 50px;
-
-

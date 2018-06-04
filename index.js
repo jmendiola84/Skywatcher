@@ -7,11 +7,21 @@ var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
 var $cleanBtn = document.querySelector("#clean");
+var $page1Btn = document.querySelector("#page-1");
+var $page2Btn = document.querySelector("#page-2");
+var $page3Btn = document.querySelector("#page-3");
+var $page4Btn = document.querySelector("#page-4");
+var $page5Btn = document.querySelector("#page-5");
 
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
 $cleanBtn.addEventListener("click", handleCleanButtonClick);
+$page1Btn.addEventListener("click", handlePage1ButtonClick);
+$page2Btn.addEventListener("click", handlePage2ButtonClick);
+$page3Btn.addEventListener("click", handlePage3ButtonClick);
+$page4Btn.addEventListener("click", handlePage4ButtonClick);
+$page5Btn.addEventListener("click", handlePage5ButtonClick);
 
 // Set filteredUFO to data initially
 var filteredUFO = dataSet;
@@ -21,12 +31,12 @@ var OrgDataSet = dataSet;
 // renderTable renders the filteredUFO to the tbody
 function renderTable() {
   $tbody.innerHTML = "";
-  for (var i = 0; i < filteredUFO.length; i++) {
+  for (var i = 0; i <= 50; i++) {
     // Get get the current UFO object and its fields
     var ufo = filteredUFO[i];
     var fields = Object.keys(ufo);
     // Create a new row in the tbody, set the index to be i + startingIndex
-    var $row = $tbody.insertRow(i);
+	var $row = $tbody.insertRow(i);
     for (var j = 0; j < fields.length; j++) {
       // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
       var field = fields[j];
@@ -36,6 +46,8 @@ function renderTable() {
 	  {$cell.style.display="none";} 
     }
   }
+	//for (var i = 50; i <= filteredUFO.length; i++) {
+	//filteredUFO[i].style.display="none";}
 }
 
 function handleSearchButtonClick() {
@@ -130,6 +142,107 @@ function handleCleanButtonClick() {
 	$shapeInput.value = "";
 	
 	renderTable();
+}
+
+function handlePage1ButtonClick() {
+	$tbody.innerHTML = "";
+	for (var i = 0; i <= 49; i++) {
+    // Get get the current UFO object and its fields
+    var ufo = filteredUFO[i];
+    var fields = Object.keys(ufo);
+    // Create a new row in the tbody, set the index to be i + startingIndex
+	var $row = $tbody.insertRow(i);
+    for (var j = 0; j < fields.length; j++) {
+      // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
+      var field = fields[j];
+      var $cell = $row.insertCell(j);
+      $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
+    }
+  }
+ 
+	
+}
+
+function handlePage2ButtonClick() {
+	$tbody.innerHTML = "";
+	for (var i = 50; i <= 99; i++) {
+    // Get get the current UFO object and its fields
+    var ufo = filteredUFO[i];
+    var fields = Object.keys(ufo);
+    // Create a new row in the tbody, set the index to be i + startingIndex
+	var $row = $tbody.insertRow(i-50);
+    for (var j = 0; j < fields.length; j++) {
+      // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
+      var field = fields[j];
+      var $cell = $row.insertCell(j);
+      $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
+    }
+  }
+ 
+}
+
+function handlePage3ButtonClick() {
+	$tbody.innerHTML = "";
+	for (var i = 100; i <= 149; i++) {
+    // Get get the current UFO object and its fields
+    var ufo = filteredUFO[i];
+    var fields = Object.keys(ufo);
+    // Create a new row in the tbody, set the index to be i + startingIndex
+	var $row = $tbody.insertRow(i-100);
+    for (var j = 0; j < fields.length; j++) {
+      // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
+      var field = fields[j];
+      var $cell = $row.insertCell(j);
+      $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
+    }
+  }
+ 
+}
+
+function handlePage4ButtonClick() {
+	$tbody.innerHTML = "";
+	for (var i = 150; i <= 199; i++) {
+    // Get get the current UFO object and its fields
+    var ufo = filteredUFO[i];
+    var fields = Object.keys(ufo);
+    // Create a new row in the tbody, set the index to be i + startingIndex
+	var $row = $tbody.insertRow(i-150);
+    for (var j = 0; j < fields.length; j++) {
+      // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
+      var field = fields[j];
+      var $cell = $row.insertCell(j);
+      $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
+    }
+  }
+ 
+}
+
+function handlePage5ButtonClick() {
+	$tbody.innerHTML = "";
+	for (var i = 200; i <= 249; i++) {
+    // Get get the current UFO object and its fields
+    var ufo = filteredUFO[i];
+    var fields = Object.keys(ufo);
+    // Create a new row in the tbody, set the index to be i + startingIndex
+	var $row = $tbody.insertRow(i-200);
+    for (var j = 0; j < fields.length; j++) {
+      // For every field in the UFO object, create a new cell at set its inner text to be the current value at the current address's field
+      var field = fields[j];
+      var $cell = $row.insertCell(j);
+      $cell.innerText = ufo[field];
+	  if (field === "durationMinutes")
+	  {$cell.style.display="none";} 
+    }
+  }
+ 
 }
 
 // Render the table for the first time on page load
