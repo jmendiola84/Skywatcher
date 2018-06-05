@@ -179,6 +179,8 @@ function handleSearchButtonClick() {
     // If true, add the address to the filteredUFO, otherwise don't add it to filteredUFO
   return UFOShape === filterShape;})}
 	
+if(filteredUFO.length == 0){
+$results.innerHTML = "<p>No results found</p>";}
   
 	
    if (filteredUFO.length < 1900)
@@ -219,11 +221,10 @@ function handleSearchButtonClick() {
 																		$page3Btn.style.display="none";
 																		if (filteredUFO.length < 100){
 																			$page2Btn.style.display="none";
-																			if(filteredUFO.length = 0){
-																			   $results.innerHTML = "<p>No results found</p>";
-   }
+																			
 	}}}}}}}}}}}}}}}}}}}
 	
+
    
    
   renderTable();
@@ -286,7 +287,7 @@ function handlePageButtonClick(begrow,endrow) {
 
 
 function handlePage1ButtonClick() {
-	handlePageButtonClick(0,99);
+	renderTable();
 	
 }
 
