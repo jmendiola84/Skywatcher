@@ -30,6 +30,11 @@ td { color: #c6dbef; }
 
 p { color: #ffffff; }
 
+
+.pages {
+	color: #ffffff;
+}
+
 .jumbotron {
 	text-align: center; 
 	background-image: url(https://www.kcet.org/sites/kl/files/styles/kl_image_article_hero/public/thumbnails/image/stars-banner.jpg); 
@@ -62,7 +67,6 @@ p { color: #ffffff; }
   box-shadow: 0 4px rgba(33,113,181,0.5);
   transform: translateY(4px);
 }
-
 
 .table-hover tbody tr:hover td {
     background-color: rgba(240,240,240,0.9);

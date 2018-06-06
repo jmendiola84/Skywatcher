@@ -8,6 +8,7 @@ var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
 var $cleanBtn = document.querySelector("#clean");
+var $pagination = document.querySelector("nav");
 var $page1Btn = document.querySelector("#page-1");
 var $page2Btn = document.querySelector("#page-2");
 var $page3Btn = document.querySelector("#page-3");
@@ -92,7 +93,8 @@ function handleSearchButtonClick() {
   var prv_flg = 0;
 
   dataSet = OrgDataSet;
-  
+  $pagination.style.display="block";
+  $results.innerHTML = "";
   $page2Btn.style.display="block";
   $page3Btn.style.display="block";
   $page4Btn.style.display="block";
@@ -181,7 +183,10 @@ function handleSearchButtonClick() {
 	
 if(filteredUFO.length == 0){
 $results.innerHTML = "<p>No results found</p>";}
-  
+ 
+if(filteredUFO.length > 2000){
+$results.innerHTML = "<p>Your search returned a large number of results. Narrow your search, or click <a onclick='showAllResults()'>here</a> to show all results in a single page.</p>";}
+	
 	
    if (filteredUFO.length < 1900)
 	{$page20Btn.style.display="none";
@@ -235,12 +240,14 @@ function handleCleanButtonClick() {
 	filteredUFO = OrgDataSet;
 	dataSet = OrgDataSet;
 	
+	$results.innerHTML = "";
 	$datetimeInput.value = "";
 	$cityInput.value = "";
 	$stateInput.value = "";
 	$countryInput.value = "";
 	$shapeInput.value = "";
-	
+	$pagination.style.display="block";
+
 	$page2Btn.style.display="block";
 	$page3Btn.style.display="block";
 	$page4Btn.style.display="block";
@@ -386,6 +393,12 @@ function handlePage20ButtonClick() {
 
 }
 
+function  showAllResults() {
+	$pagination.style.display = "none";
+	$results.innerHTML = "<p>All results are listed below in a single page.</p>"
+	handlePageButtonClick(0,filteredUFO.length);
+}
 
+	
 // Render the table for the first time on page load
 renderTable();
